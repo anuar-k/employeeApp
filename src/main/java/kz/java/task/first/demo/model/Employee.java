@@ -1,11 +1,16 @@
 package kz.java.task.first.demo.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 @Entity
 @Table(name = "employee")
-@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@EqualsAndHashCode
+@Getter
+@Setter
 public class Employee {
 
     @Id
