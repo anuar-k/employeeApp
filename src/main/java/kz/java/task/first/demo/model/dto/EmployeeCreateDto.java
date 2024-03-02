@@ -25,7 +25,7 @@ public class EmployeeCreateDto {
     private String email;
 
     @NotEmpty
-    @Pattern(regexp = "^\\d{10}$")
+    @Pattern(regexp = "^\\d{10}$", message = "некорректный номер")
     private String number;
 
     private String country;
