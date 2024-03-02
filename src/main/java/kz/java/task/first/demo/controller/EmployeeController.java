@@ -1,5 +1,6 @@
 package kz.java.task.first.demo.controller;
 
+import jakarta.validation.Valid;
 import kz.java.task.first.demo.model.Employee;
 import kz.java.task.first.demo.model.dto.EmployeeCreateDto;
 import kz.java.task.first.demo.model.dto.EmployeeSearchDto;
@@ -41,7 +42,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity create(@RequestBody EmployeeCreateDto employee) {
+    public ResponseEntity create(@Valid @RequestBody EmployeeCreateDto employee) {
         Employee newEmployee = null;
         try {
             newEmployee = employeeService.create(employee);
@@ -55,7 +56,7 @@ public class EmployeeController {
     public ResponseEntity<?> search(@RequestBody EmployeeSearchDto searchValues) {
 
         Long id = searchValues.getId() != null ? searchValues.getId() : null;
-        String firstName = searchValues.getFirsName() != null ? searchValues.getFirsName() : null;
+        String firstName = searchValues.getFirstName() != null ? searchValues.getFirstName() : null;
         String lastName = searchValues.getLastName() != null ? searchValues.getLastName() : null;
         String middleName = searchValues.getMiddleName() != null ? searchValues.getMiddleName() : null;
         String number = searchValues.getNumber() != null ? searchValues.getNumber() : null;

@@ -26,10 +26,11 @@ public class EmployeeService {
         Employee newEmployee = Employee.builder()
                 .country(employee.getCountry())
                 .city(employee.getCity())
-                .firsName(employee.getFirsName())
+                .firstName(employee.getFirstName())
                 .number(employee.getNumber())
                 .middleName(employee.getMiddleName())
                 .lastName(employee.getLastName())
+                .email(employee.getEmail())
                 .build();
         return repository.save(newEmployee);
     }

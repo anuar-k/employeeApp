@@ -11,7 +11,7 @@ public class EmployeeSearchDto {
 
     private Long id;
 
-    private String firsName;
+    private String firstName;
 
     private String lastName;
 
